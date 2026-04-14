@@ -1,128 +1,81 @@
-📊 Experimental Design with R
-Comprehensive Statistical Testing and Visualization Toolkit
+# Experimental Design with R — Statistical Testing Toolkit
 
-Author: Mohammad Hossein Darabi
+A comprehensive R toolkit for analyzing experimental data using statistical tests — from visual exploration to assumptions checking, hypothesis testing, and post-hoc analysis with both **parametric** and **non-parametric** methods.
 
-This repository provides a complete R-based toolkit for analyzing experimental data using statistical tests. It walks through everything from visual exploration to assumptions checking, hypothesis testing, and post-hoc analysis — including both **parametric** and **non-parametric** methods.
+## Datasets Used
 
-It is perfect for students, researchers, or data enthusiasts working with group comparisons, repeated measures, or mixed designs.
+| Dataset | Description | Source |
+|---------|-------------|--------|
+| ToothGrowth | Tooth length by supplement and dose | `datasets` |
+| PlantGrowth | Plant weights under different conditions | `datasets` |
+| mice2 | Mouse weights before/after treatment | `datarium` |
+| selfesteem | Self-esteem scores at 3 time points | `datarium` |
+| anxiety | Anxiety scores across activity levels and time | `datarium` |
+| poison.data | Survival time under poisons and treatments | `BHH2` |
+| dental, rat, respiration | Advanced non-parametric analysis data | `nparLD` |
 
----
+## Key Topics Covered
 
-## 📁 Datasets Used
-
-This project utilizes both built-in and custom datasets, including:
-
-| Dataset            | Description                                                   | Source               |
-|--------------------|---------------------------------------------------------------|----------------------|
-| ToothGrowth        | Tooth length by supplement and dose                           | `datasets` package   |
-| PlantGrowth        | Weights of plants under different conditions                  | `datasets` package   |
-| mice2              | Mouse weights before and after treatment                      | `datarium` package   |
-| selfesteem         | Self-esteem scores at 3 time points                           | `datarium` package   |
-| anxiety            | Anxiety scores across physical activity levels and time       | `datarium` package   |
-| poison.data        | Survival time under different poisons and treatments          | `BHH2` package       |
-| dental, rat, respiration | Experimental data for advanced non-parametric analysis | `nparLD` package     |
-
----
-
-## 🔍 Key Topics Covered
-
-### ✅ Parametric Tests
-- One-sample t-test
-- Two-sample t-test (independent and paired)
+### Parametric Tests
+- One-sample, two-sample (independent & paired) t-tests
 - One-way and two-way ANOVA
 - Repeated measures ANOVA
 - Mixed ANOVA (between and within factors)
 - Post-hoc tests (Tukey HSD, Bonferroni-adjusted t-tests)
 
-### ✅ Non-Parametric Alternatives
+### Non-Parametric Alternatives
 - Wilcoxon signed-rank test
 - Mann-Whitney U test
 - Kruskal-Wallis test
-- Friedman test (non-parametric repeated measures)
-- Non-parametric mixed ANOVA using the `nparLD` package
+- Friedman test
+- Non-parametric mixed ANOVA (`nparLD`)
 
----
+### Assumptions Testing
+- **Normality:** Shapiro-Wilk, Jarque-Bera, Anderson-Darling, Lilliefors
+- **Homogeneity of variances:** Bartlett, Fligner-Killeen, Levene
+- **Outliers:** Z-scores and IQR
+- **Sphericity:** Mauchly's test (repeated measures)
 
-## 🧪 Assumptions Tested
+## Getting Started
 
-Before each parametric test, the following assumptions are carefully verified:
-- **Normality**: Shapiro-Wilk, Jarque-Bera, Anderson-Darling, Lilliefors
-- **Homogeneity of variances**: Bartlett, Fligner-Killeen, Levene test
-- **Outliers**: Detected using Z-scores and IQR
-- **Sphericity** (for repeated measures): Mauchly's test
+### Prerequisites
 
----
+- R 4.0+
+- RStudio (recommended)
 
-## 📊 Visualizations
+### Installation
 
-The script includes high-quality visualizations using `ggplot2`, `ggpubr`, and base R:
-- Histograms
-- Boxplots (grouped and colored)
-- Interaction plots
-- Profile plots for paired data
-- Density overlays
-
----
-
-## 🧭 Project Structure
-
-The R script is organized in clear, commented sections:
-1. **Exploratory Data Analysis (EDA)**
-2. **Outlier Detection**
-3. **Parametric Tests (t-tests and ANOVA)**
-4. **Non-Parametric Tests**
-5. **Mixed and Repeated Measures Designs**
-6. **Advanced Non-Parametric Models with `nparLD`**
-7. **Post-Hoc Comparisons**
-
-You can run it sequentially or jump to the section relevant to your data and design.
-
----
-
-## ⚙️ Requirements
-
-Install the following packages before running the script:
-
-```r
-install.packages(c(
-  "ggplot2", "ggpubr", "tseries", "nortest", "DescTools", "multcompView",
-  "car", "rstatix", "datarium", "PairedData", "reshape", "reshape2",
-  "nlme", "BHH2", "tidyverse", "nparLD"
-))
+```bash
+git clone https://github.com/Wobbly1212/statistical-tests-experimental-design-R.git
+cd statistical-tests-experimental-design-R
 ```
 
----
+Install all required packages:
 
-## ▶️ How to Use
+```r
+source("install_packages.R")
+```
 
-1. Clone or download this repository.
-2. Open `Comparison of Groups.R` in RStudio.
-3. Run section by section based on your use case.
-4. Ensure `sonno-long.csv` (if used) is in your working directory.
+### Usage
 
----
+1. Open `experimental_design.R` in RStudio
+2. Run section by section based on your use case
+3. Ensure `sonno-long.csv` (if used) is in your working directory
 
-## 🎯 Use Cases
+## Project Structure
 
-- Analyze experiments with multiple groups
-- Run repeated measures designs
-- Explore data visually and statistically
-- Learn or teach applied statistics in R
+```
+statistical-tests-experimental-design-R/
+├── experimental_design.R   # Main analysis script
+├── install_packages.R      # Dependency installer
+├── LICENSE
+└── README.md
+```
 
----
+## Author
 
-## 🙏 Credits
+**Diako Darabi**
 
-This resource is built using:
-- R core packages (`datasets`, `ggplot2`, `stats`)
-- Educational data from `datarium`, `BHH2`, and `nparLD`
-- Online materials from STHDA and CRAN documentation
+## License
 
-Special thanks to the R and data science community for open resources and powerful libraries.
-
----
-
-## 📘 License
-
-MIT License. You are free to use, share, and modify.
+This project is licensed under the [MIT License](LICENSE).

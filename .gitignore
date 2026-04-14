@@ -1,0 +1,15 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+.Renviron
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
